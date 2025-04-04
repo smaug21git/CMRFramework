@@ -54,14 +54,14 @@ public class Baseclass {
 				}
 	
 	
-	@Parameters("BROWSER")
+	
 	@BeforeClass(groups = {"SmokeTest","RegressionTest"})
 	
-				public void beforeclass(@Optional("chrome") String browser ) throws IOException
+				public void beforeclass() throws IOException
 				{
 					System.out.println("=====launch Browser=========");
 						
-				String BROWSER =browser;  // flib.getDatafromPropertiesFile("browser");  
+				String BROWSER =System.getProperty("browser");
 				
 				if(BROWSER.equals("chrome"))
 						{
@@ -89,9 +89,9 @@ public class Baseclass {
 					{
 						System.out.println("======login to application=========");
 						
-						String URL = flib.getDatafromPropertiesFile("url");
-						String USERNAME = flib.getDatafromPropertiesFile("username");
-						String PASSWORD = flib.getDatafromPropertiesFile("password");
+						String URL = System.getProperty("url");
+						String USERNAME = System.getProperty("username");
+						String PASSWORD = System.getProperty("password");
 						
 						driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(17));
 						driver.manage().window().maximize();
