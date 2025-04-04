@@ -35,7 +35,7 @@ public class CreateOrgTest extends Baseclass {
 		UtilityClassObject.getTest().log(Status.INFO, "Getting data from excel sheet");
 		
 		ExcelUtility eLib = new ExcelUtility();  
-		String org_name = eLib.getDataFromExcel("Sheet3", 1, 9) + randomNum;
+		String org_name = eLib.getDataFromExcel("Sheet3", 1, 2) + randomNum;
 		
 		  /*creating orgTest*/ 
 		UtilityClassObject.getTest().log(Status.INFO, "creating OrgTest ");
